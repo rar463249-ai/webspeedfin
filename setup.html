@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SpeedAnalyzer Setup Guide</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'DM Sans', sans-serif; }
+        .gradient-bg { background: linear-gradient(135deg, #be123c 0%, #ec4899 100%); }
+    </style>
+</head>
+<body class="bg-gray-50 text-slate-600">
+    <!-- Header -->
+    <header class="gradient-bg text-white py-8">
+        <div class="container mx-auto px-6">
+            <div class="text-center">
+                <h1 class="text-4xl font-bold mb-2">SpeedAnalyzer Setup</h1>
+                <p class="text-xl opacity-90">Configuration Guide</p>
+            </div>
+        </div>
+    </header>
+
+    <!-- Setup Instructions -->
+    <section class="py-12">
+        <div class="container mx-auto px-6 max-w-4xl">
+            <div class="bg-white rounded-lg shadow-lg p-8 mb-8">
+                <h2 class="text-2xl font-bold text-slate-700 mb-6">Getting Started</h2>
+                
+                <div class="space-y-8">
+                    <!-- Step 1 -->
+                    <div class="border-l-4 border-rose-600 pl-6">
+                        <h3 class="text-xl font-semibold text-slate-700 mb-3">Step 1: Get Google PageSpeed Insights API Key</h3>
+                        <ol class="list-decimal list-inside space-y-2 text-slate-600">
+                            <li>Go to the <a href="https://console.developers.google.com/" target="_blank" class="text-rose-600 hover:underline">Google Cloud Console</a></li>
+                            <li>Create a new project or select an existing one</li>
+                            <li>Enable the PageSpeed Insights API</li>
+                            <li>Create credentials (API Key)</li>
+                            <li>Copy your API key</li>
+                        </ol>
+                    </div>
+
+                    <!-- Step 2 -->
+                    <div class="border-l-4 border-pink-500 pl-6">
+                        <h3 class="text-xl font-semibold text-slate-700 mb-3">Step 2: Configure the Application</h3>
+                        <ol class="list-decimal list-inside space-y-2 text-slate-600">
+                            <li>Open <code class="bg-gray-100 px-2 py-1 rounded">analyze.php</code></li>
+                            <li>Replace <code class="bg-gray-100 px-2 py-1 rounded">YOUR_GOOGLE_PAGESPEED_API_KEY</code> with your actual API key</li>
+                            <li>Save the file</li>
+                        </ol>
+                        
+                        <div class="mt-4 p-4 bg-gray-100 rounded-lg">
+                            <p class="text-sm text-slate-600 mb-2"><strong>Example:</strong></p>
+                            <code class="text-sm">const API_KEY = 'AIzaSyBOti4mM-6x9WDnZIjIeyEU21OpBXqWBgw';</code>
+                        </div>
+                    </div>
+
+                    <!-- Step 3 -->
+                    <div class="border-l-4 border-orange-500 pl-6">
+                        <h3 class="text-xl font-semibold text-slate-700 mb-3">Step 3: Upload Files</h3>
+                        <ol class="list-decimal list-inside space-y-2 text-slate-600">
+                            <li>Upload all files to your web server</li>
+                            <li>Ensure PHP is enabled on your server</li>
+                            <li>Make sure the server can make outbound HTTP requests</li>
+                        </ol>
+                    </div>
+
+                    <!-- Step 4 -->
+                    <div class="border-l-4 border-green-500 pl-6">
+                        <h3 class="text-xl font-semibold text-slate-700 mb-3">Step 4: Test the Application</h3>
+                        <ol class="list-decimal list-inside space-y-2 text-slate-600">
+                            <li>Open <code class="bg-gray-100 px-2 py-1 rounded">index.html</code> in your browser</li>
+                            <li>Enter a website URL to test</li>
+                            <li>Click "Analyze" and wait for results</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+
+            <!-- File Structure -->
+            <div class="bg-white rounded-lg shadow-lg p-8 mb-8">
+                <h2 class="text-2xl font-bold text-slate-700 mb-6">File Structure</h2>
+                <div class="bg-gray-100 p-4 rounded-lg font-mono text-sm">
+                    <div class="space-y-1">
+                        <div>📁 speedanalyzer/</div>
+                        <div class="ml-4">📄 index.html</div>
+                        <div class="ml-4">📄 analyze.php</div>
+                        <div class="ml-4">📄 config.php</div>
+                        <div class="ml-4">📄 script.js</div>
+                        <div class="ml-4">📄 setup.html</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Requirements -->
+            <div class="bg-white rounded-lg shadow-lg p-8 mb-8">
+                <h2 class="text-2xl font-bold text-slate-700 mb-6">Server Requirements</h2>
+                <ul class="list-disc list-inside space-y-2 text-slate-600">
+                    <li>PHP 7.4 or higher</li>
+                    <li>cURL extension enabled</li>
+                    <li>JSON extension enabled</li>
+                    <li>Outbound HTTP/HTTPS requests allowed</li>
+                    <li>Web server (Apache, Nginx, etc.)</li>
+                </ul>
+            </div>
+
+            <!-- Troubleshooting -->
+            <div class="bg-white rounded-lg shadow-lg p-8">
+                <h2 class="text-2xl font-bold text-slate-700 mb-6">Troubleshooting</h2>
+                <div class="space-y-4">
+                    <div>
+                        <h4 class="font-semibold text-slate-700 mb-2">Error: "Failed to connect to PageSpeed Insights API"</h4>
+                        <p class="text-slate-600">Check that your server can make outbound HTTPS requests and that your API key is correct.</p>
+                    </div>
+                    <div>
+                        <h4 class="font-semibold text-slate-700 mb-2">Error: "Invalid URL format"</h4>
+                        <p class="text-slate-600">Make sure the URL includes http:// or https:// and is properly formatted.</p>
+                    </div>
+                    <div>
+                        <h4 class="font-semibold text-slate-700 mb-2">Error: "API Error: API key not valid"</h4>
+                        <p class="text-slate-600">Verify your API key is correct and that the PageSpeed Insights API is enabled in your Google Cloud project.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-800 text-white py-8">
+        <div class="container mx-auto px-6 text-center">
+            <p>&copy; 2024 SpeedAnalyzer. Built with Google PageSpeed Insights API.</p>
+        </div>
+    </footer>
+</body>
+</html>
